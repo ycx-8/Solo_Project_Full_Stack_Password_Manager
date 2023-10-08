@@ -1,0 +1,15 @@
+Table user {
+  id INT [PRIMARY KEY]
+  email VARCHAR
+  hashed_password VARCHAR
+}
+
+Table password_stored {
+  id INT [PRIMARY KEY]
+  website_name VARCHAR
+  account_username VARCHAR
+  account_password VARCHAR
+  user_id INT
+}
+
+Ref: password_stored.user_id > user.id // many-to-one
